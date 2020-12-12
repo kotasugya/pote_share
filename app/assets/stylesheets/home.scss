@@ -1,12 +1,36 @@
-body {
-  position: relative;
-  min-height: 100vh;
-  padding-bottom: 180px;
-  box-sizing: border-box;
-  color: #333333;
+/*top-wrapper*/
+.top-wrapper{
+  padding: 180px 160px;
+  background-image: url("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg");
 }
 
+/*lesson-wrapper*/
+.area-index-wrapper{
+  height: auto;
+}
+.areas{
+  margin: 20px 100px 30px 100px;
+}
+.area{
+  float: left;
+  width: 25%;
+  margin: 0px 5px 0px 5px;
+}
 .area-image{
-  width: 100%;
+  position: relative;
+
+}
+.area-image img{
+  width: 50%;
   height: 360px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  object-fit: cover;
+
+}
+.area-image p{
+  position: absolute;
+  color: white;
+  font-size: 15px;
+  top: 60px;
 }

@@ -1,32 +1,37 @@
-<html>
-
-<body>
-<div class = top-wrapper>
+  <div class = top-wrapper>
     <div class = main-search>
       <h1>Potepan Shareでまだ体験したことのない旅をしよう</h1>
-      <input type="search" autocomplete="on" list="list">
-        <datalist id="list">
-          <option value="東京">
-          <option value="大阪">
-          <option value="京都">
-          <option value="札幌">
-        </datalist>
-      <input type="submit" value="探す">
+      <p>エリア</p>
+      <input type="text" placeholder="東京"/>
+      <input type="submit" value="探す"/>
     </div>
   </div>
-  <div class = area-wrapper>
+  <div class = area-index-wrapper>
     <h2>おすすめのエリア</h2>
-    <div classs = area-index>
-      <img class = "area-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" alt="tokyo">
-      <p>東京</p>
-      <img class = "area-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg" alt="osaka">
-      <p>大阪</p>
-      <img class = "area-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg" alt="kyoto">
-      <p>京都</p>
-      <img class = "area-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg" alt="sapporo">
-      <p>札幌</p>
+    <div class = areas>
+      <div class = area>
+        <div class = area-image>
+          <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" alt="tokyo">
+          <p>東京</p>
+        </div>
+      </div>
+      <div class = area>
+        <div class = area-image>
+          <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg" alt="osaka">
+          <p>大阪</p>
+        </div>
+      </div>
+      <div class = area>
+        <div class = area-image>
+          <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg" alt="kyoto">
+          <p>京都</p>
+        </div>
+      </div>
+      <div class = area>
+        <div class = area-image>
+          <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg" alt="sapporo">
+          <p>札幌</p>
+        </div>
+      </div>
     </div>
   </div>
-</body>
-
-</html>

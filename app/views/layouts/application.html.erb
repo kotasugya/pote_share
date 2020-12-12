@@ -8,21 +8,23 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-  <header>
-    <div class = header-logo>
-      <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" alt="header-logo">
+    <header>
+      <div class = header-left>
+        <img class = logo src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" alt="サイトロゴ">
+        <p>エリア</p>
+        <p>探す</p>
+      </div>
+      <div class = header-right>
+        <p>ログイン</p>
+        <p>登録する</p>
+      </div>
+    </header>
+    <div class = container>
+      <%= yield %>
     </div>
-    <P>エリア</P><P>キーワード</P>
-    <div class = login_&_siginup>
-    <P>ログイン</P>
-    <P>登録する</P>
-    </div>
-  </header>
-    <%= yield %>
     <footer>
-    <P>© 2020 POTEPAN.INC.</P>
+      <p>© 2020 POTEPAN.INC.</p>
     </footer>
   </body>
 </html>
