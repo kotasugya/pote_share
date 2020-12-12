@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+ /* universal */
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+/* header */
+
+header{
+  height: 70px;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+/* footer */
+
+footer{
+  height: 140px;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
