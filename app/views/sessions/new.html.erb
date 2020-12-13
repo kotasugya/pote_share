@@ -1,8 +1,7 @@
 <div class = user_form>
   <h2>新しいアカウトを作成</h2>
-  <%= form_with(url: login_path, scope::session, local:true) do |f| %>
-      <table>
-          <tr>
+  <%= form_with @user do |f| %>
+      <          <tr>
               <th><%= f.label :name ,"名前" %></th>
               <td><%= f.text_field :name %></td>
           </tr>
@@ -18,7 +17,7 @@
               <th><%= f.label :password_confirmation ,"パスワード確認" %></th>
               <td><%= f.text_area :password_confirmation %></td>
           </tr>
-      </table>
+      </>
       <div>
           <ul>
               <li><%= f.submit "新しいアカウントを作成"%></li>
