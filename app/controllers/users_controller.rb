@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.save
+    if @user.update(user_params)
       flash[:success] = "登録情報を更新しました"
       redirect_to user_path(@user)
     else
@@ -31,7 +31,19 @@ class UsersController < ApplicationController
     end
   end
 
-  def destory
+  def login_form
+  end
+
+  def login
+    @user = User.find_by(email: params[:email])
+    if @user && authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to root_path
+      flash[:success] = "ログインしました"
+    else
+      @error_message = "メールアドレスまたはパスワードが間違っています"
+      render "login_form"
+    end
   end
 
   private
