@@ -11,13 +11,13 @@
   <body>
     <header>
       <div class = header-left>
-        <img class = logo src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" alt="サイトロゴ">
+        <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"), root_path%>
         <p>エリア</p>
         <p>探す</p>
       </div>
       <div class = header-right>
-        <p>ログイン</p>
-        <p>登録する</p>
+        <%= link_to "ログイン", login_path %>
+        <%= link_to "登録する", new_user_path %>
       </div>
     </header>
     <div class = container>
