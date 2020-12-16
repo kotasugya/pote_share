@@ -16,8 +16,12 @@
         <p>探す</p>
       </div>
       <div class = header-right>
-        <%= link_to "ログイン", login_path %>
-        <%= link_to "登録する", new_user_path %>
+        <% if session[:user_id]%>
+          <%= User.find_by(id: session[:user_id]).name%>
+        <% else %>
+          <%= link_to "ログイン", login_path %>
+          <%= link_to "登録する", new_user_path %>
+        <% end %>
       </div>
     </header>
     <div class = container>
