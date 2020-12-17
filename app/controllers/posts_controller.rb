@@ -12,9 +12,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.search(params[:search])
   end
-
+ 
   def edit
   end
   

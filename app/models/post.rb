@@ -9,4 +9,8 @@ class Post < ApplicationRecord
   validates :room_price, presence: true
   validates :room_address, presence: true
 
+  def Post.search(search)
+    Post.where(['room_address LIKE ?', "%#{search}%"])
+  end
+
 end
