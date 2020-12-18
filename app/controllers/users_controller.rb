@@ -5,6 +5,17 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    @user = User.find(params[:id])
+    @posts = @user.posts
+  end
+  
+  def myrooms
+    @user = User.find(params[:id])
+    byebug
+    @posts = @user.posts
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
