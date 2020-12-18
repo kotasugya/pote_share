@@ -11,10 +11,15 @@ class PostsController < ApplicationController
   def create
   end
 
-  def index
+  def search
     @posts = Post.search(params[:search])
   end
- 
+
+  def index
+    @user = User.find(params[:id])
+    @posts = @user.posts
+  end
+
   def edit
   end
   

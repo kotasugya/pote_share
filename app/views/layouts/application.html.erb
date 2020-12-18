@@ -19,6 +19,8 @@
         <% if @current_user%>
           <%= link_to @current_user.name, users_path(@user) %>
           <%= link_to "ログアウト", logout_path, method: :post%>
+          <%= link_to "登録済みルーム", posts_path%>
+
         <% else %>
           <%= link_to "ログイン", login_path %>
           <%= link_to "登録する", new_user_path %>

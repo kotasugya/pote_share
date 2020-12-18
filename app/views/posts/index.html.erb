@@ -1,19 +1,6 @@
-<div class = account&profile>
-  <h2>検索結果：〇〇件</h2>
-    <table>
-    <% @posts. each do |post| %>
-      <tr>
-        <th>ルーム名</th>
-        <td><%= post.room_name %></td>
-      </tr>
-      <tr>
-        <th>エリア</th>
-        <td><%= post.room_address %></td>
-      </tr>
-      <tr>
-        <th>料金</th>
-        <td><%= post.room_price %></td>
-      </tr>
-    <% end %>
-    </table>
-    <div>
+<div class = "rooms">
+  <% if @user.posts.any? %>
+    <h2>登録済みルーム一覧</h2>
+    <%= render @microposts %>
+  <% end %>
+</div>
