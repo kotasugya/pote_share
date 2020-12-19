@@ -12,8 +12,7 @@ class UsersController < ApplicationController
   
   def myrooms
     @user = User.find(params[:id])
-    byebug
-    @posts = @user.posts
+    @posts = @user.post
   end
 
   def create
