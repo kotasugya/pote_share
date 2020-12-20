@@ -44,11 +44,15 @@
 
 }
 
-/*lesson-wrapper*/
+/*area-index-wrapper*/
 .area-index-wrapper{
   width: 100%;
-  height: auto;
+  height: 500px;
   padding-bottom: 60px;
+}
+.area-index-wrapper h2{
+  display: inline-block;
+  margin: 30px 0px 0px 130px;
 }
 .areas{
   margin: 20px 100px 30px 100px;
@@ -57,20 +61,22 @@
   float: left;
 }
 .area-image{
+  width: 25%;
   position: relative;
+  margin: 15px 25px 25px 35px;
 }
 .area-image img{
-  width: 100%;
+  width: 220px;
   height: 360px;
   border-radius: 5px;
-  margin: 15px 25px 25px 35px;
   object-fit: cover;
 
 }
 .area-image p{
-  position: absolute;
   color: white;
-  font-size: 15px;
+  font-size: 20px;
   top: 80%;
-  left: 50%;
+  left: 150%;
+  position: absolute;
+  display: block;
 }
