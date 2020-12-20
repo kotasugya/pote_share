@@ -1,6 +1,6 @@
 <div class = "rooms">
-  <% if @user.posts.any? %>
+  <% if @user.post.any? %>
     <h2>登録済みルーム一覧</h2>
-    <%= render @microposts %>
+    <%= @posts %>
   <% end %>
 </div>

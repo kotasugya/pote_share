@@ -4,12 +4,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
-  def index
-    @user = User.find(params[:id])
-    @posts = @user.posts
-  end
-  
+ 
   def myrooms
     @user = User.find(params[:id])
     @posts = @user.post
