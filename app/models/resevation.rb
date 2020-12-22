@@ -4,7 +4,7 @@ class Resevation < ApplicationRecord
   belongs_to :post
 
 #各カラムへのvalidation
-validates :start_date, presence: true
-validates :end_date, presence: true
+# validates :start_date, presence: true
+# validates :end_date, presence: true
 validates :num_people, presence: true
 end

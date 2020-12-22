@@ -1,12 +1,22 @@
 <div class = post_show>
-  <table>
-    <tr>
-      <th>ルーム名</th>
-      <td><%= @post.room_name %></td>
-    </tr>
-    <tr>
-      <th>料金</th>
-      <td><%= @post.room_price %></td>
-    </tr>
-  <p><%= link_to "予約する", new_reservation_path	%></p>
+  <%= form_with model: @reservation do |f| %>
+      <table>
+          <tr>
+              <h4><%= @post.room_price%> / 日</h4>
+          </tr>
+          <tr>
+              <th><%= f.label :start_date ,"開始日" %></th>
+              <td><%= f.date_select :start_date %></td>
+          </tr>
+          <tr>
+              <th><%= f.label :end_date ,"終了日" %></th>
+              <td><%= f.date_select :end_date %></td>
+          </tr>
+          <tr>
+              <th><%= f.label :num_people ,"人数" %></th>
+              <td><%= f.number_field :num_people %></td>
+          </tr>
+      </table>
+        <%= f.submit "予約する" %>
+  <% end %>
 </div>
