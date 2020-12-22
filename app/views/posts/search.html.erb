@@ -14,6 +14,9 @@
         <th>料金</th>
         <td><%= post.room_price %></td>
       </tr>
+      <tr>
+        <td><%= link_to "詳細を見る", post_path(post.id) %></td>
+      </tr>
     <% end %>
     </table>
     <div>

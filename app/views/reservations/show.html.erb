@@ -1,1 +1,21 @@
-<h2>hoge</h2>
+<div class = post_show>
+  <table>
+    <tr>
+      <th>金額</th>
+      <td><%= @post.room_price %></td>
+    </tr>
+    <tr>
+      <th>開始日</th>
+      <td><%= %></td>
+    </tr>
+    <tr>
+      <th>パスワード</th>
+      <td><%= @post.password %></td>
+    </tr>
+  </table>
+  <div>
+    <ul>
+      <li><%= link_to "予約する", new_reservation_path)%></li>
+    </ul>
+  </div>
+</div>
