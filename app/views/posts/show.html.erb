@@ -1,5 +1,5 @@
 <div class = post_show>
-  <%= form_with model: @reservation do |f| %>
+  <%= form_with model: @reservation , local: true do |f| %>
       <table>
           <tr>
               <h4><%= @post.room_price%> / 日</h4>
