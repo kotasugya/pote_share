@@ -1,0 +1,31 @@
+<div class = reservations_index>
+  <h2>予約済みルーム一覧</h2>
+    <table>
+    <% @reservations. each do |reservation| %>
+      <tr>
+        <th>ルーム名</th>
+        <td><%=link_to @post.room_name, reservation_path(reservation.id)%></td>
+      </tr>
+      <tr>
+        <th>ルーム紹介</th>
+        <td><%= @post.room_PR %></td>
+      </tr>
+      <tr>
+        <th>合計料金</th>
+        <td>¥<%= @post.room_price * reservation.num_people %></td>
+      </tr>
+      <tr>
+        <th>開始日</th>
+        <td><%= reservation.start_date %></td>
+      </tr>
+      <tr>
+        <th>終了日</th>
+        <td><%= reservation.end_date %></td>
+      </tr>
+      <tr>
+        <th>予約確定日時</th>
+        <td><%= reservation.created_at %></td>
+      </tr>
+    <% end %>
+    </table>
+    <div>

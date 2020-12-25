@@ -15,6 +15,15 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def index
+    @reservations = Resevation.all
+    @reservation = Resevation.find_by(params[:post_id])
+    @post = Post.find_by(params[:id])
+    if @reservation.post_id == @post.id
+      @post = Post.find(params[:id])
+    end
+  end
+
   def edit
   end
 
