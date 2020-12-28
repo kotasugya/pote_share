@@ -8,9 +8,9 @@
 
 5.times do |n|
   User.create!(
-    name: "テスト君#{n + 5}",
-    email: "test#{n + 5}@gmail.com",
-    password: "aaaaaaaaaa#{n + 5}"
+    name: "テスト君#{n + 1}",
+    email: "test#{n + 1}@gmail.com",
+    password: "9740zero#{n + 1}"
   )
 end
 

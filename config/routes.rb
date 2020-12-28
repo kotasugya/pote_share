@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   post "/logout", to: "users#logout"
   get "/search", to: "posts#search"
   get "/myrooms/:id", to: "users#myrooms"
-  post "/posts/:id", to: "reservations#new"
   resources :users
-  resources :posts
-  resources :reservations
+  resources :posts do
+    resources :reservations
+  end
 end

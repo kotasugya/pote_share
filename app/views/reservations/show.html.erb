@@ -1,21 +1,21 @@
 <div class = post_show>
   <table>
     <tr>
-      <th>金額</th>
-      <td><%= @post.room_price %></td>
-    </tr>
-    <tr>
       <th>開始日</th>
-      <td><%= %></td>
+      <td><%= @reservation.start_date %></td>
     </tr>
     <tr>
-      <th>パスワード</th>
-      <td><%= @post.password %></td>
+      <th>終了日</th>
+      <td><%= @reservation.end_date %></td>
+    </tr>
+    <tr>
+      <th>宿泊人数</th>
+      <td><%= @reservation.num_people %></td>
     </tr>
   </table>
   <div>
     <ul>
-      <li><%= link_to "予約する", new_reservation_path)%></li>
+      <li><%= link_to "予約一覧に戻る", "#"%></li>
     </ul>
   </div>
 </div>

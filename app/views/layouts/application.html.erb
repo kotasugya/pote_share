@@ -30,7 +30,7 @@
           <%= link_to @current_user.name, user_path(@current_user) %>
           <%= link_to "ログアウト", logout_path, method: :post %>
           <%= link_to "登録済みルーム", "/myrooms/#{@current_user.id}" %>
-          <%= link_to "予約済みルーム", reservations_path %>
+          <%= link_to "予約済みルーム", "#" %>
         <% else %>
           <%= link_to "ログイン", login_path %>
           <%= link_to "登録する", new_user_path %>

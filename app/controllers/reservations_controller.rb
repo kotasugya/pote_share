@@ -10,18 +10,13 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Resevation.new(reservation_params)
     if @reservation.save
-      redirect_to reservation_path(@reservation)
+      redirect_to post_reservation_path(@reservation.post_id, @reservation.id)
       flash[:success] = "予約が完了しました"
     end
   end
 
   def index
     @reservations = Resevation.all
-    @reservation = Resevation.find_by(params[:post_id])
-    @post = Post.find_by(params[:id])
-    if @reservation.post_id == @post.id
-      @post = Post.find(params[:id])
-    end
   end
 
   def edit
@@ -31,7 +26,7 @@ class ReservationsController < ApplicationController
   end
 
   private
-    def reservation_params
-      params.require(:reservation).permit(:start_date, :end_date, :num_people)
-    end
+  def reservation_params
+    params.permit(:start_date, :end_date, :num_people, :post_id).merge(user_id: @current_user.id)
+  end
 end
