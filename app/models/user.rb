@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   #user・reservationモデルとの関連づけ
   has_many :post, dependent: :destroy
-  has_many :reservation, dependent: :destroy
+  has_many :resevation, dependent: :destroy
 
   #各カラムへのvalidation
   validates :name, presence: true, length: {maximum: 30}
