@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/myrooms/:id", to: "users#myrooms"
   resources :users
   resources :posts do
-    resources :reservations
+    resources :reservations, only: [:new, :create]
   end
+  resources :reservations, only: [:index,:show, :edit, :update, :destroy]
 end

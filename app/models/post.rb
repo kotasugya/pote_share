@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   #user・reservationモデルとの関連付け
   belongs_to :user
   has_many :resevation
+  has_one_attached :image
 
   #各へのvalidation
   validates :user_id, presence: true

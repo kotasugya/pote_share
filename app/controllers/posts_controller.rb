@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.image.attach(params[:post][:image])
     if @post.save
       flash[:success] = "ルームを登録しました"
       redirect_to post_path(@post)
@@ -34,7 +35,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:room_name, :room_PR, :room_price, :room_address)
+      params.require(:post).permit(:room_name, :room_PR, :room_price, :room_address, :image)
     end
 
 end

@@ -4,7 +4,7 @@
     <% @reservations. each do |reservation| %>
       <tr>
         <th>ルーム名</th>
-        <td><%=link_to reservation.post.room_name, "/posts/#{reservation.post.id}/reservations/#{reservation.id}" %></td>
+        <td><%=link_to reservation.post.room_name, reservation_path(reservation) %></td>
       </tr>
       <tr>
         <th>使用日数</th>
