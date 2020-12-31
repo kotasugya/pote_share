@@ -21,12 +21,13 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:search])
+    @posts = Post.search_area(params[:search_area])
+    @posts = Post.search_keyword(params[:search_keyword])
   end
 
   def edit
   end
-  
+
   def update
   end
 
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:room_name, :room_PR, :room_price, :room_address, :image)
+      params.require(:post).permit(:room_name, :room_PR, :room_price, :room_address, :image).merge(user_id: @current_user.id)
     end
 
 end

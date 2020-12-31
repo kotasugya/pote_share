@@ -1,6 +1,10 @@
 <div class = account&profile>
   <table>
     <tr>
+      <th>ユーザーアイコン</th>
+      <td><%= image_tag "/user_images/#{@user.image_name}" %></td>
+    </tr>
+    <tr>
       <th>名前</th>
       <td><%= @user.name %></td>
     </tr>

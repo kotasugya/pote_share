@@ -1,5 +1,9 @@
 <table>
 	<tr>
+		<th>ルームイメージ</th>
+		<td><%= image_tag @post.image if @post.image.attached? %></td>
+	</tr>
+	<tr>
 		<th>ルーム名</th>
 		<td><%=@post.room_name %></td>
 	</tr>

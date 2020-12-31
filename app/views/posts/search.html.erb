@@ -2,7 +2,10 @@
   <h2>検索結果：〇〇件</h2>
     <table>
     <% @posts. each do |post| %>
-      <%= image_tag post.image if post.image.attached? %>
+      <tr>
+        <th>ルームイメージ</th>
+        <td><%= image_tag post.image if post.image.attached? %></td>
+      </tr>
       <tr>
         <th>ルーム名</th>
         <td><%= post.room_name %></td>
