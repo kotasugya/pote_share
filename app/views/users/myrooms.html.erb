@@ -1,6 +1,28 @@
 <div class = "rooms">
   <% if @user.posts.any? %>
     <h2>登録済みルーム一覧</h2>
-    <%= @posts %>
+    <table>
+      <% @posts. each do |post| %>
+        <tr>
+          <th>ルームイメージ</th>
+          <td><%= image_tag post.image if post.image.attached? %></td>
+        </tr>
+        <tr>
+          <th>ルーム名</th>
+          <td><%= post.room_name %></td>
+        </tr>
+        <tr>
+          <th>エリア</th>
+          <td><%= post.room_address %></td>
+        </tr>
+        <tr>
+          <th>料金</th>
+          <td><%= post.room_price %></td>
+        </tr>
+        <tr>
+          <td><%= link_to "詳細を見る", post_path(post.id) %></td>
+        </tr>
+      <% end %>
+    </table>
   <% end %>
 </div>
