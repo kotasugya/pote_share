@@ -5,12 +5,13 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Resevation.find(params[:id])
+    @post = @reservation.post
   end
 
   def create
     @reservation = Resevation.new(reservation_params)
     if @reservation.save
-      redirect_to post_reservation_path(@reservation.post_id, @reservation.id)
+      redirect_to reservation_path(@reservation.id)
       flash[:success] = "予約が完了しました"
     end
   end
