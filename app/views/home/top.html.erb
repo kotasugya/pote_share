@@ -1,39 +1,41 @@
-  <div class = top-wrapper>
-    <div class = main-search>
-      <h1>Potepan Shareでまだ体験したことのない旅をしよう</h1>
+<div class = top-wrapper>
+  <div class = main-search>
+    <h2>Potepan Shareでまだ体験したことのない旅をしよう</h2>
+    <div class = "search-field">
       <p>エリア</p>
       <%= form_with( url: search_path, class: 'search_form', method: :get, local:true) do |f| %>
-        <%= f.text_field :search, class: 'field',value: params[:search], placeholder: "東京" %>
-        <%= f.submit '探す', class: "btn" %>
+        <%= f.text_field :search_area, class: 'field',value: params[:search], placeholder: "東京", class: "main-input"%>
+        <%= f.submit '探す', class: "main-btn" %>
       <% end %>
     </div>
   </div>
-  <div class = area-index-wrapper>
-    <h2>おすすめのエリア</h2>
-    <div class = areas>
-      <div class = area>
-        <div class = area-image>
-          <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" alt="tokyo">
-          <p>東京</p>
-        </div>
+</div>
+<div class = area-index-wrapper>
+  <h2>おすすめのエリア</h2>
+  <div class = areas>
+    <div class = area>
+      <div class = area-image>
+        <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" alt="tokyo">
+        <p><%= link_to "東京", "/search?search=東京&commit=探す" %></p>
       </div>
-      <div class = area>
-        <div class = area-image>
-          <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg" alt="osaka">
-          <p>大阪</p>
-        </div>
+    </div>
+    <div class = area>
+      <div class = area-image>
+        <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg" alt="osaka">
+        <p><%= link_to "大阪", "/search?search=大阪&commit=探す" %></p>
       </div>
-      <div class = area>
-        <div class = area-image>
-          <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg" alt="kyoto">
-          <p>京都</p>
-        </div>
+    </div>
+    <div class = area>
+      <div class = area-image>
+        <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg" alt="kyoto">
+        <p><%= link_to "京都", "/search?search=京都&commit=探す" %></p>
       </div>
-      <div class = area>
-        <div class = area-image>
-          <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg" alt="sapporo">
-          <p>札幌</p>
-        </div>
+    </div>
+    <div class = area>
+      <div class = area-image>
+        <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg" alt="sapporo">
+        <p><%= link_to "札幌", "/search?search=札幌&commit=探す" %></p>
       </div>
     </div>
   </div>
+</div>

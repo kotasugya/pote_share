@@ -4,24 +4,19 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
-  def index
-    @user = User.find(params[:id])
-    @posts = @user.posts
-  end
-  
+ 
   def myrooms
     @user = User.find(params[:id])
-    byebug
     @posts = @user.posts
   end
 
   def create
     @user = User.new(user_params)
+    @user.image_name = "default_icon.jpg"
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "ユーザー登録が完了しました"
-      riderect_to user_path(@user)
+      redirect_to user_path(@user)
     else
       render "new"
     end
@@ -67,7 +62,7 @@ class UsersController < ApplicationController
   end
 
   private
-   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confrimation)
-   end
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confrimation, :image_name)
+    end
 end

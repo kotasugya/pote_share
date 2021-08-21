@@ -1,1 +1,29 @@
-<h2>hoge</h2>
+<table>
+	<tr>
+		<th>ルームイメージ</th>
+		<td><%= image_tag @post.image if @post.image.attached? %></td>
+	</tr>
+	<tr>
+		<th>ルーム名</th>
+		<td><%=@post.room_name %></td>
+	</tr>
+	<tr>
+		<th>紹介文</th>
+		<td><%=@post.room_PR %></td>
+	</tr>
+	<tr>
+		<th>値段</th>
+		<td><%=@post.room_price %> / 日</td>
+	</tr>
+	<tr>
+		<th>住所</th>
+		<td><%=@post.room_address %></td>
+	</tr>
+	<tr><th></th>
+		<td>
+			<button class = "reserve-btn">
+				<%= link_to "予約する", new_post_reservation_path(@post) %>
+			</button>
+		</td>
+	</tr>
+</table>
